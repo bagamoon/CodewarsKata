@@ -8,49 +8,53 @@ namespace StringAverage
 {
     public class Kata
     {
+        private readonly string _invalidInputResult = "n/a";
+
         public string AverageString(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
-                return "n/a";
+                return _invalidInputResult;
 
-            var nums = GetNumsInString(input);
+            var strings = GetStringsFromInput(input);
 
-            var average = CalculateAverage(nums);
-            
-            return GetStr(average);
+            if (CheckAnyInvalid(strings))
+                return _invalidInputResult;
+
+            var nums = GetNumbersFromStrings(strings);
+
+            return GetStr(GetAverage(nums));
         }
 
-        private static int CalculateAverage(IEnumerable<int> nums)
+        private int GetAverage(IEnumerable<int> nums)
         {
-            return nums.Sum() / nums.Count();
+            return Convert.ToInt32(Math.Floor(nums.Average()));
         }
 
-        private IEnumerable<int> GetNumsInString(string input)
+        private bool CheckAnyInvalid(IEnumerable<string> strings)
         {
-            return input.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(str => GetNum(str));
+            var names = Enum.GetNames(typeof(Number));
+
+            return strings.Any(str => names.Contains(str) == false);
+        }
+
+        private IEnumerable<string> GetStringsFromInput(string input)
+        {
+            return input.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        private IEnumerable<int> GetNumbersFromStrings(IEnumerable<string> strings)
+        {
+            return strings.Select(str => GetNum(str));
         }
 
         private int GetNum(string str)
-        {
-            Number number;
-
-            Enum.TryParse(str, out number);
-
-            return Convert.ToInt32(number);            
+        {                        
+            return Convert.ToInt32(Enum.Parse(typeof(Number), str));
         }
 
         private string GetStr(int num)
         {
-            Number number;
-            if (Enum.TryParse(num.ToString(), out number))
-            {
-                return Enum.GetName(typeof(Number), num);
-            }
-            else
-            {
-                return String.Empty;
-            }
+            return Enum.GetName(typeof(Number), num);            
         }
     }
 }
