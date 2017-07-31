@@ -30,6 +30,9 @@ namespace StringAverage
                 case "one":
                     return 1;
 
+                case "two":
+                    return 2;
+
                 case "three":
                     return 3;
 
@@ -42,6 +45,9 @@ namespace StringAverage
         {
             switch (num)
             {
+                case 1:
+                    return "one";
+
                 case 2:
                     return "two";
                 

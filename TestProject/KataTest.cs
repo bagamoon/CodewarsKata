@@ -11,7 +11,13 @@ namespace TestProject
     {
         [TestCase("", "n/a", TestName = "Input_Empty_String_Should_Return_n/a")]
         [TestCase("one three", "two", TestName = "Input_Divisible_Total_Should_Return_Correct_Result")]
+        [TestCase("one two", "one", TestName = "Input_Nondivisible_Total_Should_Return_Floor_Result")]
         public void AverageStringTest(string input, string expected)
+        {
+            AssertAverage(input, expected);            
+        }
+
+        private static void AssertAverage(string input, string expected)
         {
             var kata = new Kata();
 
