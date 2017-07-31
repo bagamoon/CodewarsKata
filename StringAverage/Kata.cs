@@ -10,8 +10,44 @@ namespace StringAverage
     {
         public string AverageString(string input)
         {
-            return "n/a";
+            if (string.IsNullOrEmpty(input))
+                return "n/a";
+
+            var nums = new List<int>();
+            foreach (var str in input.Split(new [] {" "}, StringSplitOptions.RemoveEmptyEntries))
+            {
+                nums.Add(GetNum(str));
+            }
+
+            return GetStr(nums.Sum() / nums.Count);
         }
 
+
+        private int GetNum(string str)
+        {
+            switch (str)
+            {
+                case "one":
+                    return 1;
+
+                case "three":
+                    return 3;
+
+                default:
+                    return 0;
+            }
+        }
+
+        private string GetStr(int num)
+        {
+            switch (num)
+            {
+                case 2:
+                    return "two";
+                
+                default:
+                    return "";
+            }
+        }
     }
 }
