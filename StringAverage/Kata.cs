@@ -10,49 +10,46 @@ namespace StringAverage
     {
         public string AverageString(string input)
         {
-            if (string.IsNullOrEmpty(input))
+            if (string.IsNullOrWhiteSpace(input))
                 return "n/a";
 
-            var nums = new List<int>();
-            foreach (var str in input.Split(new [] {" "}, StringSplitOptions.RemoveEmptyEntries))
-            {
-                nums.Add(GetNum(str));
-            }
+            var nums = GetNumsInString(input);
 
-            return GetStr(nums.Sum() / nums.Count);
+            var average = CalculateAverage(nums);
+            
+            return GetStr(average);
         }
 
+        private static int CalculateAverage(IEnumerable<int> nums)
+        {
+            return nums.Sum() / nums.Count();
+        }
+
+        private IEnumerable<int> GetNumsInString(string input)
+        {
+            return input.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(str => GetNum(str));
+        }
 
         private int GetNum(string str)
         {
-            switch (str)
-            {
-                case "one":
-                    return 1;
+            Number number;
 
-                case "two":
-                    return 2;
+            Enum.TryParse(str, out number);
 
-                case "three":
-                    return 3;
-
-                default:
-                    return 0;
-            }
+            return Convert.ToInt32(number);            
         }
 
         private string GetStr(int num)
         {
-            switch (num)
+            Number number;
+            if (Enum.TryParse(num.ToString(), out number))
             {
-                case 1:
-                    return "one";
-
-                case 2:
-                    return "two";
-                
-                default:
-                    return "";
+                return Enum.GetName(typeof(Number), num);
+            }
+            else
+            {
+                return String.Empty;
             }
         }
     }
