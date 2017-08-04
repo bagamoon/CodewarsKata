@@ -7,8 +7,8 @@
     <ProjectGuid>{9D0ECB90-3E62-41D9-AC61-C85063F328D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodewarsKata</RootNamespace>
-    <AssemblyName>CodewarsKata</AssemblyName>
+    <RootNamespace>Katas</RootNamespace>
+    <AssemblyName>Katas</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeadAnts\Kata.cs" />
     <Compile Include="StringAverage\Enums.cs" />
     <Compile Include="StringAverage\Kata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
