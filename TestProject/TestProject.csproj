@@ -61,7 +61,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StringAverage\Katas.csproj">
+    <ProjectReference Include="..\Katas\Katas.csproj">
       <Project>{9d0ecb90-3e62-41d9-ac61-c85063f328d0}</Project>
       <Name>Katas</Name>
     </ProjectReference>
