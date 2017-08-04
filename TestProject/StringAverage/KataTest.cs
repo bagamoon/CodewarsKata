@@ -1,10 +1,10 @@
 ﻿using System;
+using Katas.StringAverage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-using StringAverage;
 using Assert = NUnit.Framework.Assert;
 
-namespace TestProject
+namespace TestProject.StringAverage
 {
     [TestFixture]
     public class KataTest

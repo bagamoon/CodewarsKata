@@ -54,16 +54,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="KataTest.cs" />
+    <Compile Include="StringAverage\KataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StringAverage\StringAverage.csproj">
+    <ProjectReference Include="..\StringAverage\Katas.csproj">
       <Project>{9d0ecb90-3e62-41d9-ac61-c85063f328d0}</Project>
-      <Name>StringAverage</Name>
+      <Name>Katas</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
