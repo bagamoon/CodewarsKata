@@ -20,7 +20,7 @@ namespace TestProject.DeadAnts
 		[TestCase("t..a n antn  at ", 2, TestName = "Input_NonOrder_Fractional_Two_And_Complete_One_Should_Return_2")]
 		[TestCase("a a a aant  a ", 5, TestName = "Input_Five_Head_And_Complete_One_Should_Return_5")]
 		[TestCase("an an at aant  a ", 5, TestName = "Input_Five_Head_And_Three_Body_And_Complete_One_Should_Return_5")]
-		[TestCase("an an at aant  a nnnn", 6, TestName = "Input_Five_Head_And_Six_Body_And_Complete_One_Should_Return_5")]
+		[TestCase("an an at aant  a nnnn", 6, TestName = "Input_Five_Head_And_Six_Body_And_Complete_One_Should_Return_6")]
 		public void DeadAntCountTest(string input, int expected)
 		{
 			AssertDeadAntsCount(input, expected);
