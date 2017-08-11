@@ -11,9 +11,9 @@ namespace Katas.BandNameGenerator
 		public string BandNameGenerator(string name)
 		{
 			if (IsFirstAndLastCharAreDifferent(name))
-				return string.Format("The {0}", FormatName(name, true));
+				return string.Format("The {0}", UpperFirstCharAndLowerRestChar(name, true));
 
-			return string.Format("{0}{1}", FormatName(name, true), FormatName(name, false));
+			return GetRepeatName(name);
 		}
 
 		private bool IsFirstAndLastCharAreDifferent(string name)
@@ -22,7 +22,12 @@ namespace Katas.BandNameGenerator
 			       name.First() != name.Last();
 		}
 
-		private string FormatName(string name, bool isNeedFirstChar)
+		private string GetRepeatName(string name)
+		{
+			return UpperFirstCharAndLowerRestChar(name, true) + UpperFirstCharAndLowerRestChar(name, false);
+		}
+
+		private string UpperFirstCharAndLowerRestChar(string name, bool isNeedFirstChar)
 		{
 			var firstChar = name.First().ToString().ToUpper();
 			var theRestPart = name.Substring(1).ToLower();
