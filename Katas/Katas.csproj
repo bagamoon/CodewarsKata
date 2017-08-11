@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BandNameGenerator\Kata.cs" />
     <Compile Include="DeadAnts\Kata.cs" />
     <Compile Include="StringAverage\Enums.cs" />
     <Compile Include="StringAverage\Kata.cs" />

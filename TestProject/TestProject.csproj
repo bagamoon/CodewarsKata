@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BandNameGenerator\KataTest.cs" />
     <Compile Include="DeadAnts\KataTest.cs" />
     <Compile Include="StringAverage\KataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
