@@ -10,7 +10,7 @@ namespace Katas.BandNameGenerator
 	{
 		public string BandNameGenerator(string name)
 		{
-			if (IsFirstAndLastCharAreDifferent(name))
+			if (name.First() != name.Last())
 				return GetPrefixName(name);
 
 			return GetRepeatName(name);
@@ -19,12 +19,6 @@ namespace Katas.BandNameGenerator
 		private string GetPrefixName(string name)
 		{
 			return string.Format("The {0}", UpperFirstCharAndLowerRestChar(name, true));
-		}
-
-		private bool IsFirstAndLastCharAreDifferent(string name)
-		{
-			return name.Length == 1 ||
-			       name.First() != name.Last();
 		}
 
 		private string GetRepeatName(string name)

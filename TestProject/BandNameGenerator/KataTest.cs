@@ -16,7 +16,7 @@ namespace TestProject.BandNameGenerator
 		[TestCase("KUMA", "The Kuma", TestName = "Input_Different_Starts_Ends_and_Upper_Char_Should_Prefix_The_and_Upper_Only_First_Char")]
 		[TestCase("tart", "Tartart", TestName = "Input_Same_Starts_Ends_Should_Repeat_Twice_and_Upper_First_Char")]
 		[TestCase("SOS", "Sosos", TestName = "Input_Same_Starts_Ends_and_Upper_Char_Should_Repeat_Twice_and_Upper_Only_First_Char")]
-		[TestCase("X", "The X", TestName = "Input_Only_One_Char_Should_Prefix_The")]
+		[TestCase("X", "X", TestName = "Input_Only_One_Char_Should_Return_Same_Result")]
 		public void BandNameGeneratorTest(string input, string expected)
 		{
 			AssertBandNameGenerator(input, expected);
