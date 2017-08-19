@@ -10,7 +10,7 @@ namespace Katas.BandNameGenerator
 	{
 		public string BandNameGenerator(string name)
 		{
-			if (name.First() != name.Last())
+			if (name.ToLower().First() != name.ToLower().Last())
 				return GetPrefixName(name);
 
 			return GetRepeatName(name);
