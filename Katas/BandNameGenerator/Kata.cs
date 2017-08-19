@@ -18,15 +18,15 @@ namespace Katas.BandNameGenerator
 
 		private string GetPrefixName(string name)
 		{
-			return string.Format("The {0}", UpperFirstCharAndLowerRestChar(name, true));
+			return string.Format("The {0}", GetSingleName(name, true));
 		}
 
 		private string GetRepeatName(string name)
 		{
-			return UpperFirstCharAndLowerRestChar(name, true) + UpperFirstCharAndLowerRestChar(name, false);
+			return GetSingleName(name, true) + GetSingleName(name, false);
 		}
 
-		private string UpperFirstCharAndLowerRestChar(string name, bool isNeedFirstChar)
+		private string GetSingleName(string name, bool isNeedFirstChar)
 		{
 			var firstChar = name.First().ToString().ToUpper();
 			var theRestPart = name.Substring(1).ToLower();
