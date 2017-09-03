@@ -59,6 +59,7 @@
     <Compile Include="DeadAnts\KataTest.cs" />
     <Compile Include="StringAverage\KataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TwoSum\KataTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
