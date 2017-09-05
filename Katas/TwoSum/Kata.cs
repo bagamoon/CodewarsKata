@@ -12,7 +12,7 @@ namespace Katas.TwoSum
 		{
 			var dict = nums.Select((p, i) => new {Index = i, Value = p})
 								.GroupBy(p => p.Value)
-								.ToDictionary(p => p.Key, p => p.First().Index);
+								.ToDictionary(p => p.Key, p => p.Last().Index);
 
 			for (int i = 0; i < nums.Length; i++)
 			{
@@ -20,7 +20,7 @@ namespace Katas.TwoSum
 				int pairIndex;
 				if (dict.TryGetValue(diff, out pairIndex) && pairIndex != i)
 				{
-					return i < pairIndex ? new int[] {i, pairIndex} : new int[] {pairIndex, i};
+					return new int[] {i, pairIndex};
 				}
 			}
 
